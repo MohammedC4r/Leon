@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap");
+html {
+  font-size: 18px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+i {
+  color: #333;
+  font-size: 1.1em;
+}
+
+.header {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative !important;
+}
+@media (max-width: 786px) {
+  .header .container {
+    width: 100%;
+    padding: 0 1em;
+  }
+}
+.header__logo {
+  width: 60px;
+  cursor: pointer;
+}
+.header__opening-btn, .header__links__closing-btn {
+  background-color: transparent;
+  border: none;
+}
+.header__links {
+  width: 250px;
+  background-color: white;
+  position: absolute;
+  bottom: -15em;
+  right: 0;
+  border-radius: 0.3em;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8em;
+  padding-bottom: 1em;
+  box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.header__links__closing-btn {
+  align-self: flex-end;
+  margin-bottom: 1em;
+  transition: all 0.4s ease-in-out;
+}
+.header__links__closing-btn:hover {
+  transform: scale(1.1);
+}
+.header__links__link {
+  color: #444;
+  font-weight: 400;
+  margin-bottom: 1em;
+  transition: all 0.4s ease-in-out;
+}
+.header__links__link:hover {
+  color: #10cbb8;
+  transform: translateX(0.5em);
+}
+@media (max-width: 786px) {
+  .header__links {
+    right: 1em;
+  }
+}
+@media (max-width: 340px) {
+  .header__links {
+    right: 50% !important;
+    transform: translateX(50%);
+    align-items: center;
+  }
+}
+.header__links.active {
+  display: flex;
+  -webkit-animation: dispaly-smoothly 0.5s ease-in-out;
+          animation: dispaly-smoothly 0.5s ease-in-out;
+}
+@-webkit-keyframes dispaly-smoothly {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dispaly-smoothly {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.header__intro {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 1em;
+  background-image: url("../../images/mountain.jpg");
+  background-size: cover;
+  flex-direction: column;
+}
+.header__intro__heading {
+  color: #10cbb8;
+}
+.header__intro__paragraph {
+  font-weight: 400;
+}
+@media (max-width: 572px) {
+  .header__intro__paragraph {
+    color: white;
+  }
+}
+
+.container {
+  margin: 1em auto;
+}
+@media (min-width: 786px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1070px;
+  }
+}
+
+.header__intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=leon.css.map */

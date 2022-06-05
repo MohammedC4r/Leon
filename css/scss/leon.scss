@@ -1,0 +1,131 @@
+//      =================
+//      =    Imports    =
+//      =================
+@import "fonts";
+@import "global";
+
+
+// Varibles
+$Main-color: #10cbb8;
+$Transiton: all .4s ease-in-out;
+
+.header{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative !important;
+        @media (max-width: 786px) {
+            width: 100%;
+            padding: 0 1em;
+        }
+    }
+    &__logo{
+        width: 60px;
+        cursor: pointer;
+    }
+    &__opening-btn{
+        background-color: transparent;
+        border: none;
+    }
+    &__links{
+        width: 250px;
+        background-color: white;
+        position: absolute;
+        bottom: -15em;
+        right: 0;
+        border-radius: .3em;
+        display: flex;
+        flex-direction: column;
+        padding: .8em {
+            bottom: 1em;
+        };
+        box-shadow: 0 0 12px 4px rgba($color: #000000, $alpha: .1);
+        &__closing-btn{
+            align-self: flex-end;
+            margin-bottom: 1em;
+            transition: $Transiton;
+            @extend .header__opening-btn;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        &__link{
+            color: #444;
+            font-weight: 400;
+            margin-bottom: 1em;
+            transition: $Transiton;
+            &:hover{
+                color: $Main-color;
+                transform: translateX(.5em);
+            }
+        }
+        @media (max-width: 786px) {
+            right: 1em;
+        }
+        @media (max-width: 340px) {
+            right: 50% !important;
+            transform: translateX(50%);
+            align-items: center;
+        }
+        // Hide and dispaly links
+        display: none;
+        &.active{
+            display: flex;
+            animation: dispaly-smoothly .5s ease-in-out;
+        }
+        @keyframes dispaly-smoothly {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    }
+    &__intro{
+        text-align: center;
+        text-transform: capitalize;
+        padding: 1em;
+        background-image: url("../../images/mountain.jpg");
+        background-size: cover;
+        flex-direction: column;
+        @extend %center-center;
+        &__heading{
+            color: $Main-color;
+        }
+        &__paragraph{
+            font-weight: 400;
+            @media (max-width: 572px) {
+                color: white;
+            }
+        }
+    }
+}
+
+.container{
+    margin: 1em auto;
+    @media (min-width: 786px) {
+        width: 750px;
+    }
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+    @media (min-width: 1200px) {
+        width: 1070px;
+    }
+}
+
+// Pleaceholders 
+
+%center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
