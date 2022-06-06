@@ -16,7 +16,21 @@ button{
     cursor: pointer;
 }
 
-i{
-    color: #333;
-    font-size: 1.1em;
+.container{
+    margin: 1em auto;
+    @media (min-width: 786px) {
+        width: 750px;
+    }
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+    @media (min-width: 1200px) {
+        width: 1070px;
+    }
+}
+
+%center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

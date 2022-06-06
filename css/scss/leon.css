@@ -23,9 +23,29 @@ button {
   cursor: pointer;
 }
 
-i {
-  color: #333;
-  font-size: 1.1em;
+.container {
+  margin: 1em auto;
+}
+@media (min-width: 786px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1070px;
+  }
+}
+
+.header__intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -63,13 +83,13 @@ i {
   display: flex;
   flex-direction: column;
   padding: 0.8em;
-  padding-bottom: 1em;
+  padding-left: 1.5em;
   box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.1);
   display: none;
 }
 .header__links__closing-btn {
   align-self: flex-end;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   transition: all 0.4s ease-in-out;
 }
 .header__links__closing-btn:hover {
@@ -121,7 +141,7 @@ i {
 .header__intro {
   text-align: center;
   text-transform: capitalize;
-  padding: 1em;
+  padding: 0 1em;
   background-image: url("../../images/mountain.jpg");
   background-size: cover;
   flex-direction: column;
@@ -138,27 +158,27 @@ i {
   }
 }
 
-.container {
-  margin: 1em auto;
+.features {
+  padding: 1em;
+  margin: 2em 0;
 }
-@media (min-width: 786px) {
-  .container {
-    width: 750px;
-  }
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
 }
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
+.features__feat {
+  padding: 1em 0.5em;
+  text-align: center;
+  border-radius: 0.3em;
 }
-@media (min-width: 1200px) {
-  .container {
-    width: 1070px;
-  }
+.features__feat__icon {
+  font-size: 2em !important;
+  color: #10cbb8;
 }
-
-.header__intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.features__feat__heading {
+  margin: 0.8em 0;
+}
+.features__feat__description {
+  color: #444;
 }/*# sourceMappingURL=leon.css.map */

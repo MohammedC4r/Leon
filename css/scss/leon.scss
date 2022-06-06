@@ -3,12 +3,11 @@
 //      =================
 @import "fonts";
 @import "global";
+@import "variables";
 
-
-// Varibles
-$Main-color: #10cbb8;
-$Transiton: all .4s ease-in-out;
-
+//      ==============
+//      =   Header   =
+//      ==============
 .header{
     height: 100vh;
     display: grid;
@@ -37,16 +36,16 @@ $Transiton: all .4s ease-in-out;
         position: absolute;
         bottom: -15em;
         right: 0;
-        border-radius: .3em;
+        border-radius: $Border-radius;
         display: flex;
         flex-direction: column;
         padding: .8em {
-            bottom: 1em;
+            left: 1.5em;
         };
-        box-shadow: 0 0 12px 4px rgba($color: #000000, $alpha: .1);
+        box-shadow: $Shadows;
         &__closing-btn{
             align-self: flex-end;
-            margin-bottom: 1em;
+            margin-bottom: 2em;
             transition: $Transiton;
             @extend .header__opening-btn;
             &:hover{
@@ -89,7 +88,7 @@ $Transiton: all .4s ease-in-out;
     &__intro{
         text-align: center;
         text-transform: capitalize;
-        padding: 1em;
+        padding: 0 1em;
         background-image: url("../../images/mountain.jpg");
         background-size: cover;
         flex-direction: column;
@@ -106,25 +105,33 @@ $Transiton: all .4s ease-in-out;
     }
 }
 
-.container{
-    margin: 1em auto;
-    @media (min-width: 786px) {
-        width: 750px;
-    }
-    @media (min-width: 992px) {
-        width: 970px;
-    }
-    @media (min-width: 1200px) {
-        width: 1070px;
-    }
-}
+//      =========================
+//      =   Features Sections   =
+//      =========================
 
-// Pleaceholders 
-
-%center-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.features{
+    padding: 1em;
+    margin: 2em 0;
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1em;
+    }
+    &__feat{
+        padding: 1em .5em;
+        text-align: center;
+        border-radius: .3em;
+        &__icon{
+            font-size: 2em !important;
+            color: $Main-color;
+        }
+        &__heading{
+            margin: .8em 0;
+        }
+        &__description{
+            color: #444;
+        }
+    }
 }
 
 
