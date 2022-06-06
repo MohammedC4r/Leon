@@ -2,8 +2,9 @@
 //      =    Imports    =
 //      =================
 @import "fonts";
-@import "global";
 @import "variables";
+@import "global";
+
 
 //      ==============
 //      =   Header   =
@@ -58,7 +59,7 @@
             margin-bottom: 1em;
             transition: $Transiton;
             &:hover{
-                color: $Main-color;
+                color: $Primery-color;
                 transform: translateX(.5em);
             }
         }
@@ -72,7 +73,7 @@
         }
         // Hide and dispaly links
         display: none;
-        &.active{
+        &--active{
             display: flex;
             animation: dispaly-smoothly .5s ease-in-out;
         }
@@ -91,10 +92,12 @@
         padding: 0 1em;
         background-image: url("../../images/mountain.jpg");
         background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        @extend %center-center;
         &__heading{
-            color: $Main-color;
+            color: $Primery-color;
         }
         &__paragraph{
             font-weight: 400;
@@ -110,8 +113,6 @@
 //      =========================
 
 .features{
-    padding: 1em;
-    margin: 2em 0;
     .container{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -123,16 +124,94 @@
         border-radius: .3em;
         &__icon{
             font-size: 2em !important;
-            color: $Main-color;
+            color: $Primery-color;
         }
         &__heading{
             margin: .8em 0;
         }
-        &__description{
-            color: #444;
+    }
+}
+
+//      =========================
+//      =   Services Section    =
+//      =========================
+.services{
+    &__content{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin: 2em 0 0 0;
+        &__service{
+            min-height: 180px;
+            display: flex;
+            margin: 2em 1em;
+            &__icon{
+                color: $Primery-color;
+                margin-right: .5em;
+            }
+            &__description__heading{
+                margin-bottom: .8em
+            }
+            @media (max-width: 635px) {
+                flex-direction: column;
+                text-align: center;
+                &__description__heading{
+                    margin-top: .8em;
+                }
+            }
+        }
+        &__image{
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+        }
+    }
+    .col--image{
+        place-self: center;
+        position: relative;
+        &::after{
+            content: "";
+            display: block;
+            width: 80px;
+            height: 300px + 40px;
+            background-color: $Secondary-color;
+            position: absolute;
+            top: -20px;
+            right: -40px;
+            z-index: -1;
         }
     }
 }
 
+.container{
+    margin: 1em auto;
+    @media (min-width: 786px) {
+        width: 750px;
+    }
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+    @media (min-width: 1200px) {
+        width: 1070px;
+    }
+}
 
+.section-heading{
+    font-size: 4em;
+    letter-spacing: .2em;
+    text-align: center;
+    color:  #ebeced;
+    @media (max-width: 522px) {
+        font-size: 3em;
+    }
+    @media (max-width: 352px) {
+        letter-spacing: .1em;
+    }
+}
 
+.section-description-paragraph{
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    bottom: 1.2em;
+}

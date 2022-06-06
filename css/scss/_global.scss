@@ -16,21 +16,11 @@ button{
     cursor: pointer;
 }
 
-.container{
-    margin: 1em auto;
-    @media (min-width: 786px) {
-        width: 750px;
-    }
-    @media (min-width: 992px) {
-        width: 970px;
-    }
-    @media (min-width: 1200px) {
-        width: 1070px;
-    }
+section{
+    padding: 1em;
+    margin: 2em 0;
 }
 
-%center-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+section p{
+    color: #444;
 }
