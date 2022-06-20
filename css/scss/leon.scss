@@ -114,8 +114,7 @@
 
 .features{
     .container{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        @extend %responsive-grid;
         grid-gap: 1em;
     }
     &__feat{
@@ -137,9 +136,7 @@
 //      =========================
 .services{
     &__content{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        margin: 2em 0 0 0;
+        @extend %responsive-grid;
         &__service{
             min-height: 180px;
             display: flex;
@@ -186,6 +183,38 @@
     }
 }
 
+//      ========================
+//      =   Portfolio Seciton  =
+//      ========================
+.portfolio{
+    &__content__works{
+        @extend %responsive-grid;
+        &__work{
+            margin: 1em;
+            &__image{
+                max-width: 100%;
+            }
+            &__title{
+                margin: .5em 0;
+            }
+        }
+    }
+    &__content__more-works-btn{
+        background-color: transparent;
+        border: 1px solid #333;
+        border-radius: none;
+        padding: .5em 1em;
+        display: block;
+        margin: 3em auto;
+        transition: $Transiton;
+        &:hover{
+            background-color: #111;
+            color: white;
+        }
+    }
+}
+
+
 .container{
     margin: 1em auto;
     @media (min-width: 786px) {
@@ -197,6 +226,11 @@
     @media (min-width: 1200px) {
         width: 1070px;
     }
+}
+
+%responsive-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .section-heading{
@@ -217,4 +251,5 @@
     font-weight: 400;
     position: relative;
     bottom: 1.2em;
+    margin-bottom: 2em;
 }
