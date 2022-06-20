@@ -14,3 +14,10 @@ openingButton.addEventListener("click", ()=>{
 closingButton.addEventListener("click", ()=>{
   headerLinks.classList.remove("header__links--active")
 });
+
+const links = document.querySelectorAll(".header__links__link");
+links.forEach(link =>{
+  link.addEventListener("click", () =>{
+    headerLinks.classList.remove("header__links--active");
+  });
+});

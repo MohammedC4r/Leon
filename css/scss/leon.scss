@@ -233,7 +233,7 @@
         align-items: center;
         &__image{
             max-width: 100%;
-            outline: 1px solid $Secondary-color;
+            outline: 1px dotted $Secondary-color;
             outline-offset: .2em;
         }
         &__description{
@@ -258,6 +258,67 @@
         }
    }
 }
+
+//      =====================
+//      =  Contact Section  =
+//      =====================
+.contact{
+    background-color: #fafafa;
+    margin: 4em 0;
+    &__content{
+        &__invitation{
+            font-size: 2em;
+            font-weight: 600;
+            color: $Secondary-color;
+        }
+        &__email{
+            font-size: 1.5em;
+            font-weight: 600;
+            color: $Primery-color;
+            margin: 1em 0;
+            display: block;
+        }
+        &__soc{
+            display: flex;
+            align-items: center;
+            i{
+                margin: 0 .5em;
+                cursor: pointer;
+                color: $Secondary-color;
+                &:first-of-type{
+                    margin-left: 1em;
+                }
+            }
+        }
+        @media (max-width: 570px) {
+            text-align: center;
+            &__soc{
+                display: block;
+                p{
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+
+}
+
+//      ============
+//      =  Footer  =
+//      ============
+footer{
+    padding: 2em;
+    text-align: center;
+    background-color: $Secondary-color;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2px;
+    span{
+        color: $Primery-color;
+        font-weight: bold;
+    }
+}
+
 
 .container{
     margin: 1em auto;
