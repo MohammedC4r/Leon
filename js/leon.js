@@ -15,9 +15,28 @@ closingButton.addEventListener("click", ()=>{
   headerLinks.classList.remove("header__links--active")
 });
 
-const links = document.querySelectorAll(".header__links__link");
-links.forEach(link =>{
+document.querySelectorAll(".header__links__link").forEach(link =>{
   link.addEventListener("click", () =>{
     headerLinks.classList.remove("header__links--active");
+  });
+});
+
+//      ===================
+//      =  Scroll To Top  =
+//      ===================
+const scrollButton = document.getElementById("scroll-up");
+
+addEventListener("scroll", () =>{
+  if(window.scrollY > 900){
+    scrollButton.classList.add("scroll-up--acitve");
+  }else{
+    scrollButton.classList.remove("scroll-up--acitve");
+  }
+});
+
+scrollButton.addEventListener("click", () =>{
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
   });
 });

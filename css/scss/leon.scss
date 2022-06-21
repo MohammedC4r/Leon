@@ -319,6 +319,24 @@ footer{
     }
 }
 
+//      ==========================
+//      =  Scroll To Top Button  =
+//      ==========================
+#scroll-up{
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    background-color: $Secondary-color;
+    color: white;
+    border: 1px solid white;
+    padding: .5em .8em;
+    display: none;
+}
+.scroll-up--acitve{
+    display: block !important;
+    animation: dispaly-smoothly .5s ease-in-out;
+}
+
 
 .container{
     margin: 1em auto;
